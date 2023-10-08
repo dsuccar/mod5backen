@@ -14,8 +14,8 @@ ActiveRecord::Schema.define(version: 4) do
 
   create_table "battles", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "rapper_id"
-    t.boolean "winner"
+    t.integer "boss_id"
+    t.integer "winner_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 4) do
   create_table "lyrics", force: :cascade do |t|
     t.string "text"
     t.string "answer"
+    t.string "song"
     t.integer "rapper_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -32,7 +33,10 @@ ActiveRecord::Schema.define(version: 4) do
     t.string "name"
     t.string "bio"
     t.string "hometown"
+    t.integer "lives"
     t.boolean "isboss"
+    t.string "badge"
+    t.string "gif"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -40,6 +44,8 @@ ActiveRecord::Schema.define(version: 4) do
   create_table "users", force: :cascade do |t|
     t.integer "artist_id"
     t.string "badges"
+    t.string "username"
+    t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

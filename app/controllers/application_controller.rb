@@ -1,2 +1,7 @@
 class ApplicationController < ActionController::Base
-end
+    protect_from_forgery unless: -> { request.format.json? }
+    config.middleware.use ActionDispatch::Flash
+  
+  
+  end
+  
